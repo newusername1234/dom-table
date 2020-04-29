@@ -50,17 +50,19 @@
             colHeadings.appendChild(th);
         });
 
-        MOUNTAINS.forEach(obj => {
+        MOUNTAINS.forEach(mtnObj => {
             const row = document.createElement('tr');
-            const name = document.createElement('td');
-            const height = document.createElement('td');
-            const place = document.createElement('td');
-            name.textContent = obj.name;
-            height.textContent = obj.height;
-            place.textContent = obj.place;
-            row.appendChild(name);
-            row.appendChild(height);
-            row.appendChild(place);
+            for (let [key, val] of Object.entries(mtnObj)) {
+                const td = document.createElement('td');
+                // const height = document.createElement('td');
+                // const place = document.createElement('td');
+                td.textContent = val;
+                // height.textContent = obj.height;
+                // place.textContent = obj.place;
+                row.appendChild(td);
+                // row.appendChild(height);
+                // row.appendChild(place);
+            }
             table.appendChild(row);
         })
     </script>
